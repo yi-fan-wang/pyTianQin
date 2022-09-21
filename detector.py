@@ -50,8 +50,9 @@ Class for detector response, position, etc.
 
     def antenna_pattern(self,ra,dec,pol,t_gps,spacecraft):
         theta = pi/2 - dec
-
-        #n is the inverse propagation direction, n and v are orthogonal unit vectors in propagation place
+        phi = ra
+        
+        #n is the inverse propagation direction, n and v are orthogonal unit vectors in propagation plane
         n = np.array([cos(phi)*sin(theta),sin(phi)*sin(theta),cos(theta)])
         u = np.array([-sin(phi),          cos(phi),           0])
         v = np.array([cos(phi)*cos(theta),sin(phi)*cos(theta),-sin(theta)])
